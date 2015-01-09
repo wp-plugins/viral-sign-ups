@@ -84,6 +84,8 @@ Yes, we have many more in the pipeline that will improve your experience and hel
 
 1.0.1
 You can now register and receive your license key from within the plugin.
+1.0.2
+Minor typo fixes.
 
 
 == Upgrade notice ==
