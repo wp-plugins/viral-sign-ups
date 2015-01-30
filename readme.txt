@@ -14,40 +14,35 @@ Grow your email list with Viral Sign Ups & get your customers to easily refer fr
 
 = Grow Your Email List =
 
-Word of mouth is the most trusted form of marketing. Viral Sign Ups allows your customers to easily refer friends and earn incentives for referrals. It lets customers become the brand ambassadors or the grass root sales force.
+Word of mouth is the most trusted form of marketing. Viral Sign Ups allows your site users to easily refer friends and earn incentives for their referrals.
 
-Viral Sign Ups is a WordPress plugin that lets you design and launch a customer referral campaign to collect customer emails. It allows your site customers/visitors to invite friends via multiple social channels like Facebook, Twitter, Google+, LinkedIn and email.
+Viral Sign Ups is a WordPress plugin that lets you design and launch a customer referral campaign to collect customer emails. It allows your site users to invite friends via multiple social channels like Facebook, Twitter, Google+, LinkedIn and email.
+
+Easily place an email capture form anywhere on your website. When someone submits their email address they will be shown your custom message - i.e. "Want to $50 off your next purchase? Get 5 of your friends to sign up."
+
+Each user is assigned a unique url link they can use to promote and invite their friends to your website page.
 
 Viral Sign Ups tracks each invite and goal conversion to reward your customers for their referrals.
 
 
-**Where your data is stored.**
-Your data is stored on our server and your auto reply emails when a new user signs up or refers a friend are sent out from our server. This way we can insure everything works smoothly and you don't run into any difficulties with emails not being sent out. 
 
-**Free Version**
-The free version comes with the following features.
+**Where your data is stored.**
+Your data is stored on our server and your auto reply emails when a new user signs up or refers a friend are sent out from our server. This way we can insure everything works smoothly and you don't run into any difficulties with emails not being sent out.
+
+The plugin comes with the following features.
 * Supports 1 Domain
-* Form Creator - choose button text and colour
-* Mobile Friendly
-* Up to 50 Sign Ups/mo
+* Form Creator - choose your button text and colour
+* Create your custom offer to your customers for their referrals
 * Easily place the form anywhere on your page with a short-code
-* Auto-responder
+* Collect up to 10,000 emails per month
+* With each referral your user will get an Auto-responce email of their progress
+* Export your list of sign up emails as a cvs file
+* Form & offer message are Mobile Friendly
 * Analytics
 * Updates & Support
 
-**Paid Version**
-This plugin has 4 premium versions which come with the following features.
-* Supports 1 Domain
-* Form Creator - choose button text and colour
-* Mobile Friendly
-* Up to 15,000 Sign Ups/mo
-* Easily place the form anywhere on your page with a short-code
-* Auto-responder
-* Analytics
-* Export Entries
-* Updates & Priority Support
 
-Further details can be found here: [viralsignups.com/pricing](http://www.viralsignups.com/pricing)
+Further details can be found here: http://www.viralsignups.com
 
 == Installation ==
 
@@ -58,10 +53,11 @@ Further details can be found here: [viralsignups.com/pricing](http://www.viralsi
 
 == Frequently asked questions ==
 
-= What if the monthly quota of sign ups reach my limit? =
-Your campaign will stop and you will not be able to collect more sign ups. You will need to upgrade your plan to continue the campaign and to be able to collect further sign ups. When you get close to your limit a warning message will be displayed on the “Settings” page of the plugin.
+==What if I reach the monthly quota of 10,000 sign ups?==
+Your campaign will stop and you will not be able to collect more sign ups. Users will see the following message:  ‘Oops! Seems like we’ve reached our monthly quota. Please get in touch through our Contact page.‘ You will need to upgrade your plan to continue the campaign and to be able to collect further sign ups. When you get close to your limit a warning message will be displayed on the “Sign Ups” page of the plugin.
 
-= Where are my Sign Up emails stored? = 
+
+= Where are my Sign Up emails stored? =
 Sign Up emails are stored on our server.
 
 = Do I need to configure my server to send out the Auto Reply emails? =
@@ -78,15 +74,16 @@ Yes, we have many more in the pipeline that will improve your experience and hel
 4. Insert the short-code into your page
 5. Customers refer friends
 6. Auto emails reward your customers
-7. Powerful reports 
+7. Powerful reports
 
 == Changelog ==
 
 1.0.1
 You can now register and receive your license key from within the plugin.
-
 1.0.2
 Minor typo fixes.
+1.0.3
+You can now collect up to 10,000 emails per month!
 
 
 == Upgrade notice ==
