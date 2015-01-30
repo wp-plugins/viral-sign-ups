@@ -30,16 +30,27 @@ Viral Sign Ups tracks each invite and goal conversion to reward your customers f
 Your data is stored on our server and your auto reply emails when a new user signs up or refers a friend are sent out from our server. This way we can insure everything works smoothly and you don't run into any difficulties with emails not being sent out.
 
 The plugin comes with the following features.
+
 * Supports 1 Domain
+
 * Form Creator - choose your button text and colour
+
 * Create your custom offer to your customers for their referrals
+
 * Easily place the form anywhere on your page with a short-code
+
 * Collect up to 10,000 emails per month
+
 * With each referral your user will get an Auto-responce email of their progress
+
 * Export your list of sign up emails as a cvs file
+
 * Form & offer message are Mobile Friendly
+
 * Analytics
+
 * Updates & Support
+
 
 
 Further details can be found here: http://www.viralsignups.com
