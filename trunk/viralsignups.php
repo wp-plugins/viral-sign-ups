@@ -4,8 +4,8 @@ Plugin Name: Viral Sign Ups | Free
 Plugin URI: http://www.viralsignups.com
 Author: ViralSignUps
 Author URI: http://www.viralsignups.com
-Description: Launch a Customer Referral Campaign in Minutes. Viral Sign Ups allows your customers to easily refer friends and earn incentives for referrals.
-Version: 1.0.2 
+Description: Launch a Customer Referral Campaign in Minutes. Viral Sign Ups allows your customers to easily refer friends and earn incentives for referrals. Collect up to 10,000 emails per month.
+Version: 1.0.3 
 License: GPLv2 or later
 Text Domain: viralsignups
 */
@@ -25,6 +25,9 @@ Text Domain: viralsignups
     along with this program; if not, write to the Free Software
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
+
+require_once('wp-updates-plugin.php');
+new WPUpdatesPluginUpdater_727( 'http://wp-updates.com/api/2/plugin', plugin_basename(__FILE__));
 
 // Configurations
 require_once dirname( __FILE__ ) . '/config.php';

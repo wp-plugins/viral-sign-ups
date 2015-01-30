@@ -705,7 +705,7 @@ if( ! class_exists( 'VSU_Admin_Manager' ) ) {
             $enable_credits = $this->field_wrap( $this->checkbox( 'popup_content', 'credit_line_on', 
                     __( "Enable 'Powered by' link", 'viralsignups') ) );
             $extend_url = VSU_EXTEND_FREE_MEMBERSHIP_URL;
-            $learn_more = __( "(You can collect a maximum of 50 emails. To increase this to 50 emails per month enable the 'Powered by' link above)", 'viralsignups' );
+            $learn_more = __( "(You can collect a maximum of 10 emails. To increase this to 10,000 emails per month enable the 'Powered by' link above)", 'viralsignups' );
             $enable_credits .= "<p class='vsu-admin-field-desc'>$learn_more</p>";
             
             $field_row =  "<div class='vsu-admin-row'>"
