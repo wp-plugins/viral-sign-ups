@@ -26,8 +26,8 @@ Text Domain: viralsignups
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-require_once('wp-updates-plugin.php');
-new WPUpdatesPluginUpdater_727( 'http://wp-updates.com/api/2/plugin', plugin_basename(__FILE__));
+//require_once('wp-updates-plugin.php');
+//new WPUpdatesPluginUpdater_727( 'http://wp-updates.com/api/2/plugin', plugin_basename(__FILE__));
 
 // Configurations
 require_once dirname( __FILE__ ) . '/config.php';
