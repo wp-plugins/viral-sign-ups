@@ -5,7 +5,7 @@ Plugin URI: http://www.viralsignups.com
 Author: ViralSignUps
 Author URI: http://www.viralsignups.com
 Description: Launch a Customer Referral Campaign in Minutes. Viral Sign Ups allows your customers to easily refer friends and earn incentives for referrals. Collect up to 10,000 emails per month.
-Version: 1.0.3 
+Version: 1.0.4 
 License: GPLv2 or later
 Text Domain: viralsignups
 */
