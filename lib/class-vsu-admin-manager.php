@@ -150,7 +150,7 @@ if( ! class_exists( 'VSU_Admin_Manager' ) ) {
             
             $buy_now_text = __( 'Buy Pro Version', 'viralsignups' );
             $pricings_url = esc_attr( VSU_UPGRADE_MEMBERSHIP_URL );
-            $sections .= "<li><a href='$pricings_url' class='vsu-admin-button' target='_blank'>$buy_now_text</a></li>";
+            /* $sections .= "<li><a href='$pricings_url' class='vsu-admin-button' target='_blank'>$buy_now_text</a></li>"; */
             
             $out = "<ul class='vsu-admin-navigation'>$sections</ul>";
             $out = "<div class='vsu-admin-navigation-wrap'>$out</div>";
@@ -940,7 +940,7 @@ if( ! class_exists( 'VSU_Admin_Manager' ) ) {
             $button_text = __( 'Export CSV', 'viralsignups' );
             $export = "<a href='$url' data-export-base='$base' target='_blank' class='vsu-admin-button'>$button_text</a>";
 
-            $table_top = "<div class='vsu-admin-signups-header'>$filter</div>";
+            $table_top = "<div class='vsu-admin-signups-header'>$filter $export</div>";
 
             // Contents
             // location, ip address, http referrer, time

@@ -98,6 +98,11 @@ You can now collect up to 10,000 emails per month!
 
 1.0.4
 Add more feature for new version 1.0.4
+
+1.0.5
+
+UI Improvements
+
 == Upgrade notice ==
 
 

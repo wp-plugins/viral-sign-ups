@@ -1,7 +1,7 @@
 <?php
 
 # General
-define( 'VSU_VERSION', '1.0.3' ); // plugin version
+define( 'VSU_VERSION', '1.0.5' ); // plugin version
 define( 'VSU_WEBSITE', 'http://viralsignups.com/' ); // Website URL
 define( 'VSU_EXTEND_FREE_MEMBERSHIP_URL', 'http://www.viralsignups.com/pricing/' ); // Link to more info about free membership options
 define( 'VSU_MY_ACCOUNT_URL', 'https://www.viralsignups.com/myaccount/' ); // Link to My Account page
