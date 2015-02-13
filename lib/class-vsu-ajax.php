@@ -64,7 +64,7 @@ if( ! class_exists( 'VSU_Ajax' ) ) {
          * @param mixed $data Any data attached to the repond.
          */
         public static function ajax_success( $message = '', $data = '' ) {
-            if( $message === '' ) {
+            if( $message === false ) {
                 $message = __( 'Saved!', 'viralsignups' );
             }
             VSU_Ajax::ajax_response( 'success', $message, $data );
@@ -182,6 +182,9 @@ if( ! class_exists( 'VSU_Ajax' ) ) {
             $license_key = vsu_get_setting( 'license_key', 'settings' );
             $api = new VSU_API( $license_key );
             $saved = $api->save_account_details( $data );
+            if( isset( $saved['error'] ) ) {
+                VSU_Ajax::ajax_error( $saved['error'] );
+            }
             if( isset( $saved['account_details'] ) ) {
                 global $vsu_settings;
                 $settings = $vsu_settings['settings'];
@@ -202,20 +205,24 @@ if( ! class_exists( 'VSU_Ajax' ) ) {
 
             // license authentication
             $license_key = trim( $data['license_key'] );
+            if( $license_key === '' ) {
+                VSU_Ajax::ajax_success();
+            }
             $account_details = false;
             if( (string) $license_key !== '' ) {
                 $api = new VSU_API( $license_key );
-                $api_verified = $api->authenticate();
-                if( $api_verified !== false ) {
+                $authentication = $api->authenticate();
+                if( $authentication['verified'] !== false ) {
                     $account_details = $api->get_account_details();
                     $data = wp_parse_args( $account_details, $data );
                 }
             }
-            $data['license_key_verified'] = $api_verified;
+            $data['license_key_verified'] = $authentication['verified'];
 
             VSU_Ajax::save_data( 'settings', $data );
-            VSU_Ajax::ajax_success( '', array(
-                'api_verified' => $api_verified,
+            $message = ( ! empty( $authentication['error'] ) ) ? $authentication['error'] : '';
+            VSU_Ajax::ajax_success( $message, array(
+                'api_verified' => $authentication['verified'],
                 'account_details' => $account_details
             ) );
         }

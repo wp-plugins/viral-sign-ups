@@ -51,20 +51,25 @@ if( ! class_exists( 'VSU_API' ) ) {
                 'q' => 'verify'
             ) );
             
+            $ret = array( 'verified' => false );
+            
             if( isset( $res['verified'] ) ) {
-                return true;
+                $ret['verified'] = true;
+                return $ret;
             }
             
             if( isset( $res['state'] ) && $res['state'] === 'error' ) {
                 if( isset( $res['data']['invalid'] ) ) {
-                    return 0; // user not active
+                    $ret['verified'] = 0;
                 }
-                if( isset( $res['data']['limit_reached'] ) ) {
-                    return 1; // limit reached
+                else if( isset( $res['data']['limit_reached'] ) ) {
+                    $ret['verified'] = 1;
                 }
+                $ret['error'] = reset( $res['data'] );
+                return $ret;
             }
             
-            return false; // request error
+            return $ret; // request error
         }
         
         public function get_account_details() {
@@ -238,11 +243,13 @@ if( ! class_exists( 'VSU_API' ) ) {
          * message on failure.
          */
         public function save_account_details( $account_data ) {
+            $account_data['domain'] = get_site_url();
             $res = $this->request( array(
                 'action' => 'save_account',
                 'data' => $account_data
                 ), 'post'
             );
+
             return $res;
         }
         

@@ -67,7 +67,6 @@ Further details can be found here: http://www.viralsignups.com
 ==What if I reach the monthly quota of 10,000 sign ups?==
 Your campaign will stop and you will not be able to collect more sign ups. Users will see the following message:  ‘Oops! Seems like we’ve reached our monthly quota. Please get in touch through our Contact page.‘ You will need to upgrade your plan to continue the campaign and to be able to collect further sign ups. When you get close to your limit a warning message will be displayed on the “Sign Ups” page of the plugin.
 
-
 = Where are my Sign Up emails stored? =
 Sign Up emails are stored on our server.
 
@@ -76,6 +75,9 @@ No, all emails are sent from our server. This way we can make sure there will be
 
 = Do you plan to develop additional features in the near future? =
 Yes, we have many more in the pipeline that will improve your experience and help drive and convert a higher number of people to sign up on your website.
+
+= Can I use the plugin on more than one website? =
+Yes. Just activate your license key on any number of domains & press Authenticate!
 
 == Screenshots ==
 
@@ -95,13 +97,12 @@ You can now register and receive your license key from within the plugin.
 Minor typo fixes.
 1.0.3
 You can now collect up to 10,000 emails per month!
-
 1.0.4
 Add more feature for new version 1.0.4
-
 1.0.5
-
 UI Improvements
+1.0.6
+Removed last name, automatically attaching domain names, general bug fixes.
 
 == Upgrade notice ==
 

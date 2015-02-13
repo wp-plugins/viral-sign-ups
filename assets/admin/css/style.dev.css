@@ -306,6 +306,10 @@
 .vsu-admin-wrap .vsu-admin-button:focus{
     background-color: #2FB184;
 }
+.vsu-admin-wrap #vsu-admin-form-settings-license input[type="submit"]:disabled{
+    background-color: #F0EFF2;
+    color: #494949;
+}
 .vsu-admin-wrap .vsu-admin-button.vsu-admin-button-secondary{
     padding: 15px 33px 12px;
     border: 1px solid #F0EFF2;

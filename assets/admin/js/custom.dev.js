@@ -102,10 +102,6 @@ jQuery(document).ready(function(){
         function set_account_data( data ) {
             $( '#vsu_admin-settings-first_name', $admin_wrap )
                 .val( data['first_name'] );
-            $( '#vsu_admin-settings-last_name', $admin_wrap )
-                    .val( data['last_name'] );
-            $( '#vsu_admin-settings-domain', $admin_wrap )
-                    .val( data['domain'] );
             $( '#vsu_admin-settings-email', $admin_wrap )
                     .val( data['email'] );
         }
@@ -113,52 +109,56 @@ jQuery(document).ready(function(){
         function empty_account_data(){
             $( '#vsu-admin-form-settings-account', $admin_wrap ).trigger('reset');
         }
-        
+
         // license form
-        var $license_key_field = $('#vsu-admin-form-settings-license #vsu_admin-settings-license_key');
+        var $license_form = $('#vsu-admin-form-settings-license', $admin_wrap),
+            $license_key_field = $license_form.find('#vsu_admin-settings-license_key'),
+            $authenticate_button = $license_form.find('[type="submit"]');
+        $license_key_field.on('change input', function(){
+            $authenticate_button.attr( 'disabled', ( $.trim( $license_key_field.val() ) === '' ) );
+        }).trigger('change');
         $('#vsu-admin-form-settings-license', $admin_wrap).on('submit', function(e){
             e.preventDefault();
             var $form = $(this);
-            show_loader();
-            
-            $.post(ajaxurl, {
-                action: 'vsu_save_license',
-                data: $form.serialize(),
-                position: nav_position
-            }, function(response){
-                if(response.state === 'error'){
-                    alert(response.message);
-                }
-                if(response.state === 'success'){
-                    signup_page_loaded = false;
-                    if($license_key_field.length > 0){
-                        if($license_key_field.val() === ''){
-                            $license_key_field.removeAttr('data-vsu-admin-state');
-                        }
-                        else{
-                            if( response.data['api_verified'] === 0 ) {
-                                var state = 'limit_reached';
+            if( $.trim( $license_key_field.val() ) !== '' ) {
+                show_loader();
+
+                $.post(ajaxurl, {
+                    action: 'vsu_save_license',
+                    data: $form.serialize(),
+                    position: nav_position
+                }, function(response){
+                    if( response.message !== ''){
+                        alert(response.message);
+                    }
+                    if(response.state === 'success' && response.data ){
+                        signup_page_loaded = false;
+                        if($license_key_field.length > 0){
+                            if($license_key_field.val() === ''){
+                                $license_key_field.removeAttr('data-vsu-admin-state');
                             }
                             else{
-                                var state = response.data['api_verified'] ? 'verified' : 'unverified';
+                                if( response.data['api_verified'] === 0 ) {
+                                    var state = 'limit_reached';
+                                }
+                                else{
+                                    var state = response.data['api_verified'] ? 'verified' : 'unverified';
+                                }
+                                $license_key_field.attr('data-vsu-admin-state', state);
+                                if( state === 'verified' ) {
+                                    nav_next_step();
+                                    update_export_button();
+                                }
                             }
-                            $license_key_field.attr('data-vsu-admin-state', state);
-                            if( state === 'verified' ) {
-                                nav_next_step();
-                                update_export_button();
-                            }
+                        } // license field exists and has a value
+
+                        if( response.data['account_details'] !== false ) {
+                            set_account_data( response.data['account_details'] );
                         }
-                    } // license field exists and has a value
-                    
-                    if( response.data['account_details'] === false ) {
-                        empty_account_data();
                     }
-                    else{
-                        set_account_data( response.data['account_details'] );
-                    }
-                }
-                hide_loader();
-            }, 'json');
+                    hide_loader();
+                }, 'json');
+            }
         });
             
             // account form
@@ -183,7 +183,7 @@ jQuery(document).ready(function(){
                             }
                             else{
                                 if( data['api_key'] ) {
-                                    $license_key_field.val( data['api_key'] );
+                                    $license_key_field.val( data['api_key'] ).trigger('change');
                                 }
                                 $license_key_field.attr('data-vsu-admin-state', data['api_key_status'] );
                             }

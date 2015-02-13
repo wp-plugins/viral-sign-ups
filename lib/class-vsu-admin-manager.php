@@ -489,7 +489,7 @@ if( ! class_exists( 'VSU_Admin_Manager' ) ) {
          * @param string $text Text of the button. Default: 'Save & Continue'.
          * @return string Button output.
          */
-        public function submit_button( $text = '', $classes = '', $wrap = true ) {
+        public function submit_button( $text = '', $classes = '', $wrap = true, $attrs = '' ) {
             if( $text === '' ) {
                 $text = esc_attr__( 'Save & Continue', 'viralsignups' );
             }
@@ -497,7 +497,7 @@ if( ! class_exists( 'VSU_Admin_Manager' ) ) {
                 $text = esc_attr( $text );
             }
 
-            $out = "<input type='submit' class='vsu-admin-button $classes' value='$text'/>";
+            $out = "<input type='submit' class='vsu-admin-button $classes' value='$text' $attrs/>";
             if( ! $wrap ) {
                 return $out;
             }
@@ -570,16 +570,11 @@ if( ! class_exists( 'VSU_Admin_Manager' ) ) {
                             __( 'First Name', 'viralsignups' ) 
                         )
                     );
-            $create_new .= $this->field_wrap( 
-                        $this->text_field( $section_id, 'last_name',
-                            __( 'Last Name', 'viralsignups' ) 
-                        )
-                    );
-            $create_new .= $this->field_wrap( 
-                        $this->text_field( $section_id, 'domain',
-                            __( 'Domain', 'viralsignups' ) 
-                        )
-                    );
+//            $create_new .= $this->field_wrap( 
+//                        $this->text_field( $section_id, 'last_name',
+//                            __( 'Last Name', 'viralsignups' ) 
+//                        )
+//                    );
             // @todo email field
             $create_new .= $this->field_wrap( 
                         $this->text_field( $section_id, 'email',
@@ -601,7 +596,9 @@ if( ! class_exists( 'VSU_Admin_Manager' ) ) {
                     );
             
             // license form
-            $license_submit = $this->submit_button( __( 'Authenticate', 'viralsignups' ) );
+            $license_key = $this->get_value( $section_id, 'license_key' );
+            $auth_attrs = ( trim( $license_key ) === '' ) ? 'disabled="disabled"' : '';
+            $license_submit = $this->submit_button( __( 'Authenticate', 'viralsignups' ), '', true, $auth_attrs );
             $action = esc_attr( add_query_arg( 'action', 'save_license' ) );
             $license =  "<form id='vsu-admin-form-$section_id-license' action='$action' method='post'>"
                                 . " $license $license_submit"
