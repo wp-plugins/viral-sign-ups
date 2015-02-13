@@ -110,7 +110,3 @@ UI Improvements
 Removed last name, automatically attaching domain names, general bug fixes.
 
 == Upgrade notice ==
-
-
-
-== Arbitrary section 1 ==
