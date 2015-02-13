@@ -93,14 +93,19 @@ Yes. Just activate your license key on any number of domains & press Authenticat
 
 1.0.1
 You can now register and receive your license key from within the plugin.
+
 1.0.2
 Minor typo fixes.
+
 1.0.3
 You can now collect up to 10,000 emails per month!
+
 1.0.4
 Add more feature for new version 1.0.4
+
 1.0.5
 UI Improvements
+
 1.0.6
 Removed last name, automatically attaching domain names, general bug fixes.
 
