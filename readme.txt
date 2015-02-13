@@ -64,7 +64,7 @@ Further details can be found here: http://www.viralsignups.com
 
 == Frequently asked questions ==
 
-=What if I reach the monthly quota of 10,000 sign ups?=
+= What if I reach the monthly quota of 10,000 sign ups? =
 Your campaign will stop and you will not be able to collect more sign ups. Users will see the following message:  ‘Oops! Seems like we’ve reached our monthly quota. Please get in touch through our Contact page.‘ You will need to upgrade your plan to continue the campaign and to be able to collect further sign ups. When you get close to your limit a warning message will be displayed on the “Sign Ups” page of the plugin.
 
 = Where are my Sign Up emails stored? =
