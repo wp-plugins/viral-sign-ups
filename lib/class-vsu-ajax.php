@@ -182,6 +182,9 @@ if( ! class_exists( 'VSU_Ajax' ) ) {
             $license_key = vsu_get_setting( 'license_key', 'settings' );
             $api = new VSU_API( $license_key );
             $saved = $api->save_account_details( $data );
+            if( is_wp_error( $saved ) ) {
+                VSU_Ajax::ajax_error( $saved->get_error_message() );
+            }
             if( isset( $saved['error'] ) ) {
                 VSU_Ajax::ajax_error( $saved['error'] );
             }
@@ -212,8 +215,14 @@ if( ! class_exists( 'VSU_Ajax' ) ) {
             if( (string) $license_key !== '' ) {
                 $api = new VSU_API( $license_key );
                 $authentication = $api->authenticate();
+                if( is_wp_error( $authentication ) ) {
+                    VSU_Ajax::ajax_error( $authentication->get_error_message() );
+                }
                 if( $authentication['verified'] !== false ) {
                     $account_details = $api->get_account_details();
+                    if( is_wp_error( $account_details ) ) {
+                        VSU_Ajax::ajax_error( $account_details->get_error_message() );
+                    }
                     $data = wp_parse_args( $account_details, $data );
                 }
             }
@@ -245,6 +254,9 @@ if( ! class_exists( 'VSU_Ajax' ) ) {
             if( $credits_were_on !== $credits_are_on ) {
                 $api = new VSU_API( vsu_get_setting( 'license_key', 'settings' ) );
                 $switched = $api->switch_free_plans( $credits_are_on );
+                if( is_wp_error( $switched ) ) {
+                    VSU_Ajax::ajax_error( $switched->get_error_message() );
+                }
                 if( ! $switched ) {
                     VSU_Ajax::ajax_error( __( 'Could not switch your free plan.', 'viralsignups' ) );
                 }
@@ -279,6 +291,10 @@ if( ! class_exists( 'VSU_Ajax' ) ) {
             }
             $retrieved = $vsu_api->get_signups_data( $page, $filter, $get_total );
 
+            if( is_wp_error( $retrieved ) ) {
+                VSU_Ajax::ajax_error( $retrieved->get_error_message() );
+            }
+            
             if( $retrieved === false ) {
                 VSU_Ajax::ajax_error( __( 'Could not retrieve the data. Please try again later.', 'viralsignups' ) );
             }

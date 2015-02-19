@@ -363,6 +363,15 @@ jQuery(document).ready(function(){
         var $signup_page = $('#vsu-admin-section-signups', $admin_wrap);
         $signup_page.addClass('vsu-state-loading vsu-state-total-loading');
         
+        $signup_page.on('click', '.vsu-admin-referred-count', function(){
+            $(this).toggleClass('active');
+        });
+        $(document).click(function(event) { 
+            var $target = $( event.target ).closest( '.vsu-admin-referred-count' );
+            $signup_page.find( '.vsu-admin-referred-count.active' ).not( $target )
+                    .removeClass('active');
+        });
+        
         function signups_create_table(){
             var $table = $('<table class="vsu-admin-signups-table"/>');
             $('<th>').text(VSU_Admin.signup_page_email_label).appendTo($table);
@@ -371,6 +380,17 @@ jQuery(document).ready(function(){
             $table.wrapInner('<thead/>');
             $('<tbody/>').appendTo($table);
             return $table;
+        }
+        
+        function get_referred_email_list( emails ) {
+            var $list = $('<ul class="vsu-admin-referred-emails"/>');
+            $.each( emails, function( ignore, email ){
+                $('<a/>', {
+                    href: 'mailto:' + email
+                }).text( email ).appendTo( $list ).wrap( '<li/>' );
+            });
+            
+            return $list;
         }
         
         function add_new_row(signup_data){
@@ -391,9 +411,12 @@ jQuery(document).ready(function(){
             }).text(signup_data.email).appendTo($row).wrap('<td width="35%"/>');
             
             // refer number
+            
             if(parseInt(signup_data.refer_n) > 0){
-                $('<span class="vsu-admin-referred-count"/>')
-                    .text(signup_data.refer_n).appendTo($row).wrap('<td width="5%"/>');
+                $('<a href="#vsu-admin-referred-emails-'+signup_ID+'" class="vsu-admin-referred-count"/>')
+                    .html( $('<span/>').text( signup_data.refer_n ) )
+                    .append( get_referred_email_list( signup_data.refer_emails ) )
+                    .appendTo($row).wrap('<td width="5%"/>');
             }
             else{
                 $('<td width="5%"/>').appendTo($row);

@@ -51,6 +51,10 @@ if( ! class_exists( 'VSU_API' ) ) {
                 'q' => 'verify'
             ) );
             
+            if( is_wp_error( $res ) ) {
+                return $res;
+            }
+            
             $ret = array( 'verified' => false );
             
             if( isset( $res['verified'] ) ) {
@@ -77,12 +81,12 @@ if( ! class_exists( 'VSU_API' ) ) {
                 'q' => 'get_account_details'
             ) );
 
-            if( ! $res ) {
-                return false;
+            if( is_wp_error( $res ) ) {
+                return $res;
             }
             
             if( isset( $res['state'] ) && $res['state'] === 'error' ) {
-                return false;
+                return new WP_Error( 'vsu_error', $res['message'] );
             }
             
             return $res;
@@ -131,7 +135,7 @@ if( ! class_exists( 'VSU_API' ) ) {
                         ) + $headers );
 
             if( is_wp_error( $res ) ){
-                return false;
+                return $res;
             }
             else{
                 return json_decode( wp_remote_retrieve_body( $res ), true );
@@ -158,12 +162,12 @@ if( ! class_exists( 'VSU_API' ) ) {
                 'get_total' => $get_total
             ) );
 
-            if( ! $res ) {
-                return false;
+            if( is_wp_error( $res ) ) {
+                return $res;
             }
             
             if( isset( $res['state'] ) && $res['state'] === 'error' ) {
-                return false;
+                return new WP_Error( 'vsu_error', $res['message'] );
             }
             
             return $res;
@@ -212,8 +216,8 @@ if( ! class_exists( 'VSU_API' ) ) {
                 )
             ), 'post' );
 
-            if( ! $res ) {
-                return false;
+            if( is_wp_error( $res ) ) {
+                return false; // @todo output the error
             }
             
             if( isset( $res['state'] ) && $res['state'] === 'error' ) {
@@ -263,12 +267,12 @@ if( ! class_exists( 'VSU_API' ) ) {
                 'credits_enabled' => $credits_enabled
             ), 'post' );
             
-            if( ! $res ) {
-                return false;
+            if( is_wp_error( $res ) ) {
+                return $res;
             }
             
             if( isset( $res['state'] ) && $res['state'] === 'error' ) {
-                return false;
+                return new WP_Error( 'vsu_error', $res['message'] );
             }
             return true;
         }

@@ -3,7 +3,7 @@ Contributors: globeorange
 Donate link: 
 Tags: sign up, newsletter signup, email sign up, auto responder, email marketing, refer a friend, Referral Marketing, Social media marketing, viral marketing, call to action, contact form, email form, email list, email, leads, subscribe, form
 Requires at least: 3.5
-Tested up to: 4.0
+Tested up to: 4.1.1
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -14,43 +14,39 @@ Grow your email list with Viral Sign Ups & get your customers to easily refer fr
 
 = Grow Your Email List =
 
-Word of mouth is the most trusted form of marketing. Viral Sign Ups allows your site users to easily refer friends and earn incentives for their referrals.
+You don’t need to be a technical whiz to set up Viral Sign Ups. Download and install our WordPress plugin and use the wizard to fill in the blanks. It’s that easy.
 
-Viral Sign Ups is a WordPress plugin that lets you design and launch a customer referral campaign to collect customer emails. It allows your site users to invite friends via multiple social channels like Facebook, Twitter, Google+, LinkedIn and email.
+When someone signs up on your website, they will be prompted to get say 5 friends to sign up as well in exchange for something cool, like immediate access to your service or a free product.
 
-Easily place an email capture form anywhere on your website. When someone submits their email address they will be shown your custom message - i.e. "Want to $50 off your next purchase? Get 5 of your friends to sign up."
+Each person gets a unique url to promote your site. Every time someone signs up through their link, we’ll send them an email notification telling them how many more people they need to refer in order to claim your offer!
 
-Each user is assigned a unique url link they can use to promote and invite their friends to your website page.
-
-Viral Sign Ups tracks each invite and goal conversion to reward your customers for their referrals.
+You as the campaign owner will be able to see how many people have signed up and the number of friends each one referred. You will also be able to export all of their emails.
 
 
 
 **Where your data is stored.**
-Your data is stored on our server and your auto reply emails when a new user signs up or refers a friend are sent out from our server. This way we can insure everything works smoothly and you don't run into any difficulties with emails not being sent out.
-
-The plugin comes with the following features.
-
-* Supports 1 Domain
+Your data is stored on our server and your auto reply emails when a new user signs up or refers a friend are sent out from our server. This way we can insure everything works smoothly and you don't run into any difficulties with emails not being sent out. 
+The plugin comes with the following features. 
 
 * Form Creator - choose your button text and colour
 
-* Create your custom offer to your customers for their referrals
+* Create your custom offer to your customers for their referrals 
 
-* Easily place the form anywhere on your page with a short-code
+* Easily place the form anywhere on your page with a short-code 
 
 * Collect up to 10,000 emails per month
 
-* With each referral your user will get an Auto-responce email of their progress
+* With each referral your user will get an auto-response email of their progress 
 
 * Export your list of sign up emails as a cvs file
 
-* Form & offer message are Mobile Friendly
+* Mobile Friendly
 
-* Analytics
+* See who referred who. Emails are tagged to the person that referred them.
+
+* See the referring site url that your sign up came from
 
 * Updates & Support
-
 
 
 Further details can be found here: http://www.viralsignups.com
