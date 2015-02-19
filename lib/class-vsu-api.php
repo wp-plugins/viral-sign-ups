@@ -121,7 +121,8 @@ if( ! class_exists( 'VSU_API' ) ) {
             ) );
             $url = add_query_arg( $args, VSU_API::request_url );
             $headers = array(
-                'user-agent' => get_site_url()
+                'user-agent' => get_site_url(),
+                'sslverify' => false
             );
             $res = ( $type === 'get' ) 
                     ? wp_remote_get( $url,
