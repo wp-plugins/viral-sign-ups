@@ -106,4 +106,7 @@ UI Improvements
 1.0.6
 Removed last name, automatically attaching domain names, general bug fixes.
 
+1.0.7
+Export emails tagged to the referrer and see them on Sign Ups page.
+
 == Upgrade notice ==
