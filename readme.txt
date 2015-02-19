@@ -26,6 +26,7 @@ You as the campaign owner will be able to see how many people have signed up and
 
 **Where your data is stored.**
 Your data is stored on our server and your auto reply emails when a new user signs up or refers a friend are sent out from our server. This way we can insure everything works smoothly and you don't run into any difficulties with emails not being sent out. 
+
 The plugin comes with the following features. 
 
 * Form Creator - choose your button text and colour
