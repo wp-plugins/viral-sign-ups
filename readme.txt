@@ -112,4 +112,7 @@ Export emails tagged to the referrer and see them on Sign Ups page.
 1.0.8
 Disabled SSL verification.
 
+1.0.9
+Sign-up form bug fixed.
+
 == Upgrade notice ==
